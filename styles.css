@@ -1,39 +1,39 @@
-
-/* Your CSS Code here. */
-
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    min-height: 100vh;
+    margin: 0;
+    height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #e8eef3;
+
+    background: #f2f2f2;
     font-family: Arial, sans-serif;
 }
 
 .calculator {
-    background-color: #222;
+    width: 300px;
     padding: 20px;
+
+    background: #222;
     border-radius: 15px;
-    width: 320px;
 }
 
 #display {
     width: 100%;
-    height: 70px;
+    height: 60px;
+
     margin-bottom: 15px;
-    font-size: 30px;
-    text-align: right;
     padding: 10px;
+
+    font-size: 28px;
+    text-align: right;
+
     border: none;
     border-radius: 8px;
-    background-color: #fff;
-    color: #111;
 }
 
 .buttons {
@@ -43,30 +43,33 @@ body {
 }
 
 button {
-    height: 60px;
-    font-size: 22px;
+    height: 55px;
+
     border: none;
     border-radius: 8px;
+
+    font-size: 20px;
     cursor: pointer;
-    background-color: #444;
-    color: white;
 }
 
 button:hover {
-    background-color: #666;
+    opacity: 0.8;
 }
 
-.clear {
-    background-color: #e74c3c;
+#clr {
+    background: red;
+    color: white;
 }
 
-.equal {
-    background-color: #27ae60;
-    grid-row: span 2;
-    height: 130px;
+#ans {
+    background: green;
+    color: white;
 }
 
-.zero {
-    grid-column: span 2;
-}
+#plus,
+#minus,
+#multiply,
+#divide {
+    background: orange;
+    color: white;
 }

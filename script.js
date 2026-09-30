@@ -1,31 +1,43 @@
-//your code here
+let display = document.getElementById("display");
 
-const display = document.querySelector("#display");
-
-// Add a number or operator to the display
 function appendValue(value) {
     display.value += value;
 }
 
-// Clear the entire display
 function clearDisplay() {
     display.value = "";
 }
 
-// Delete the last character
 function deleteLast() {
     display.value = display.value.slice(0, -1);
 }
 
-// Calculate the result
 function calculate() {
     try {
-        if (display.value === "") {
-            return;
+        let expression = display.value;
+
+        // Handle division by zero
+        if (expression.includes("/")) {
+            let parts = expression.split("/");
+
+            if (parts.length === 2) {
+                let firstNumber = Number(parts[0]);
+                let secondNumber = Number(parts[1]);
+
+                if (secondNumber === 0) {
+                    if (firstNumber === 0) {
+                        display.value = "NaN";
+                    } else {
+                        display.value = "Infinity";
+                    }
+
+                    return;
+                }
+            }
         }
 
-        // Evaluate the mathematical expression
-        display.value = eval(display.value);
+        display.value = eval(expression);
+
     } catch (error) {
         display.value = "Error";
     }
